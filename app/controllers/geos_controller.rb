@@ -1,0 +1,2 @@
+class GeosController < ApplicationController
+end

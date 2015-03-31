@@ -1,0 +1,11 @@
+<div id="signin-dropdown">
+	<%= form_for @user, as: :session, url: session_url, html: { class: "signin"} do |f| %>
+	<fieldset class="textbox">
+		<%= f.text_field :email, placeholder: "email" %>
+		<br/>
+		<%= f.password_field :password, placeholder: "password" %>
+		<br/>
+	</fieldset>
+	<%= f.submit "Log in" %>
+	<% end %>
+</div>

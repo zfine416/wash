@@ -1,0 +1,24 @@
+<div class="cityform">
+<%= form_tag "/users/main", method: "get" do |t| %>
+Select A City:
+<select name="city">
+	<option value="Miami">Miami</option>
+	<option value="Los Angeles">Los Angeles</option>
+	<option value="New York">New York</option>
+</select>
+
+Select a Time:
+<%= select_hour(@my_time, start_hour: 1, end_hour: 12) %>
+<select name="minutes">
+	<option value="0">00</option>
+	<option value="15">15</option>
+	<option value="30">30</option>
+	<option value="45">45</option>
+</select>
+<select name="ampm">
+	<option value="am">AM</option>
+	<option value="pm">PM</option>
+</select>
+<%= submit_tag "Search" %>
+<% end %>
+</div>

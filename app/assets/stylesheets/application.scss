@@ -1,0 +1,223 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+
+ *{
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	box-sizing: border-box;
+ }
+
+ html, body { min-height: 100%; }
+ a { text-decoration: none; }
+
+ .main-header {
+  background: rgba(0,0,0,.2);
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: #222 0px -1px 1px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  height: 10%;
+  transition: all 0.3s ease;
+  a {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    &:hover{
+    	text-decoration:none;
+      transition: color 3s;
+      color:hotpink;
+    }
+  }
+}
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #3B3B3B;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 1;
+  a {
+    display: block;
+    background: linear-gradient(#3E3E3E, #383838);
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #2E2E2E;
+    color: white;
+    padding: 15px;
+    &:hover, &:focus {
+      background: linear-gradient(#484848, #383838);
+      text-decoration: none;
+      color: hotpink;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
+  }
+}
+
+.content {
+  position: absolute;
+  top:22%;
+  left: 7%;
+  color: white;
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+}
+
+.close-menu {
+  display: none;
+}
+
+#main-nav:target {
+  width: 20%;
+}
+#main-nav:target + .page-wrap {
+  width: 80%;
+  .open-menu {
+   display: none; 
+ }
+ .close-menu {
+   display: block;
+ }
+ .main-header {
+  width: 80%;
+  left: 20%;
+}
+}
+
+h1:hover{
+	transition: color 3s;
+	color: hotpink;
+	text-decoration: none;
+}
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+    }
+
+    .active {
+      opacity: 1;
+    }
+
+    .active.left,
+    .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
+}
+
+
+
+html, 
+body, 
+.carousel, 
+.carousel-inner, 
+.carousel-inner .item {
+  height: 100%;
+}
+
+.item:nth-child(1) {
+  background: darkred;
+}
+
+.item:nth-child(2) {
+  background: red;
+}
+
+.item:nth-child(3) {
+  background: orange;
+}
+.home{
+  background-image: url(http://cdn.lightgalleries.net/4bd5ec0f44d0a/images/new_things030-2.jpg);
+  background-size: cover;
+}
+
+.block{
+  width: 100%;
+  background: black;
+  color: white;
+  height: 10%;
+  border-bottom: 1px solid hotpink;
+  ul{
+    width: 15%;
+    padding-top:10px;
+    li{
+
+    }
+  }
+}
+
+.cityform{
+  width: 100%;
+  display: block;
+  height: 10%;
+  background: hotpink;
+  color: navy;
+  form{
+    font-size: 1.5em;
+    position: absolute;
+    left: 27%;
+    top: 2%;
+  }
+}
+
+.select{
+  color: black;
+  float: right;
+  padding: 5px;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-top: -23px;
+
+}
+
+@import "bootstrap";
