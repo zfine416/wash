@@ -14,12 +14,14 @@
  *= require_self
  */
  @import "bootstrap-sprockets";
+ @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
  *{
  	margin: 0;
  	padding: 0;
  	border: 0;
  	box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
  }
 
  html, body { min-height: 100%; }
@@ -50,7 +52,10 @@
     }
   }
 }
-
+.wash{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
 .page-wrap {
   float: right;
   width: 100%;
@@ -92,8 +97,8 @@
 
 .content {
   position: absolute;
-  top:22%;
-  left: 7%;
+  top:50%;
+  left: 21%;
   color: white;
   font-size: 2em;
   display: inline-block;
@@ -155,8 +160,36 @@ h1:hover{
   }
 }
 
+.login{
+  &:hover{
+    transition: color 3s;
+    color:hotpink;
+    cursor: pointer;
+  }
+}
+.register{
+  a{
+    color: white;
+    text-decoration: none;
+    &:hover{
+      transition: color 3s;
+      color:#FF9953;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
 
-
+#exampleInputEmail1{
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+#exampleInputPassword1{
+  width:300px;
+  margin: 0 auto;
+  text-align: center;
+}
 html, 
 body, 
 .carousel, 
@@ -220,4 +253,21 @@ body,
 
 }
 
+.notice{
+  color: red;
+  font-size: .5em;
+}
+
+.submit{
+  color: black;
+  background: darkgrey;
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
+}
+
+#map-canvas{
+  height: 500px;
+  width: 100%;
+  border: 2px solid black;
+}
 @import "bootstrap";

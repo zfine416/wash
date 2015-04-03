@@ -1,13 +1,9 @@
 <div class="cityform">
 <%= form_tag "/users/main", method: "get" do |t| %>
-Select A City:
-<select name="city">
-	<option value="Miami">Miami</option>
-	<option value="Los Angeles">Los Angeles</option>
-	<option value="New York">New York</option>
-</select>
-
-Select a Time:
+Enter your address:
+<input type="text" name="address">
+<%= submit_tag "Search" %>
+<!-- Select a Time:
 <%= select_hour(@my_time, start_hour: 1, end_hour: 12) %>
 <select name="minutes">
 	<option value="0">00</option>
@@ -18,7 +14,10 @@ Select a Time:
 <select name="ampm">
 	<option value="am">AM</option>
 	<option value="pm">PM</option>
-</select>
-<%= submit_tag "Search" %>
+</select> -->
+
 <% end %>
+</div>
+
+<div id="map-canvas">
 </div>

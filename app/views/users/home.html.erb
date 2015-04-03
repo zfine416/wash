@@ -1,13 +1,11 @@
-<% fail %>
+
 
 <body class="home">
 	<nav class="main-nav" id="main-nav">
-		<a href="#">This</a>
-		<a href="#">Little</a>
-		<a href="#">Piggy</a>
-		<a href="#">Went</a>
-		<a href="#">To</a>
-		<a href="#">Market</a>
+		<a href="users/miami">Miami</a>
+		<a href="users/la">Los Angeles</a>
+		<a href="ny">New York</a>
+		<a href="users/aboutus">About Us</a>
 	</nav>
 
 	<div class="page-wrap">
@@ -20,30 +18,33 @@
 				☰
 			</a>
 
-			<h1>The Wash</h1>
+			<h1 class="wash">WASH</h1>
 		</header>
 
 		<div class="content">
-		<h1>A Whole New <br> Car Washing Experience</h1>
-		<h3>Login to start</h3>
-			<!-- <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel" data-slide-to="1"></li>
-					<li data-target="#carousel" data-slide-to="2"></li>
-				</ol> -->
-				<!-- Carousel items -->
-				<!-- <div class="carousel-inner">
-					<div class="active item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
-				</div> -->
-				<!-- Carousel nav -->
-				<!-- <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a> -->
+			<h1>A Whole New <br> Car Washing Experience</h1>
+			<h3 class="login">Login to start</h3>
+			<h4 class="register"><a href="/users/new">Register</a></h4>
+			<%= form_for @user, as: :session, url: session_url, html: { class: "loginform"} do |f| %>
+			<div class="form-group">
+				<label for="email">Email address</label>
+				<input type="email" name="session[email]" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
 			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" name="session[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+			<%= f.submit "Log in", class: "submit" %>
+			<% end %>
 
+			<% if flash[:notice] %>
+			<div class="notice"><%= flash[:notice] %></div>
+			<% end %>
+			
 		</div>
+
 	</div>
+</div>
 
 </body>
+

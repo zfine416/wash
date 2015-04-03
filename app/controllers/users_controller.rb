@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
 	before_action :user_is_current_user, only: [:edit, :update]
 
 	def current
@@ -17,22 +17,30 @@ class UsersController < ApplicationController
 	end
 
 	def home
+		@user = User.new
 	end
 
 	def main
 		# @employees = Employee.all
-		@my_time = Time.now;
+		@my_time = Time.now
 	end
 
-	def open
-		city = params[:city]
-		@employees = Employee.all.where("city='#{city}'")
+	# def open
+	# 	city = params[:city]
+	# 	@employees = Employee.all.where("city='#{city}'")
+	# 	respond_to do |format|
+	# 		format.html { render text: "Please go to emplyees.json" }
+	# 		format.json { render json: @employees.to_json }
+	# 	end
+	# end
+
+	def employees
+		@employees = Employee.all
 		respond_to do |format|
 			format.html { render text: "Please go to emplyees.json" }
 			format.json { render json: @employees.to_json }
 		end
 	end
-
 	def list
 		@employees = Employee.all
 	end
@@ -64,6 +72,11 @@ class UsersController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def checkout
+
+
 	end
 
 	private

@@ -15,8 +15,9 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
-//= require backbone/view
+//= require_tree ./backbone/views
 
 //= require_tree .
+
 
 
