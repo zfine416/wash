@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   # Example of regular route:
   get 'users/main' => 'users#main'
+  get 'users/cities' => 'users#cities'
 
-  get '/users/employees' => "users#employees"
+  get '/users/miami' => "users#miami"
+  get '/users/ny' => "users#ny"
+  get '/users/newyork' => "users#newyork"
+  get '/users/la' => "users#la"
+  get '/users/losangeles' => "users#losangeles"
 
   get 'users/checkout' => "users#checkout"
 

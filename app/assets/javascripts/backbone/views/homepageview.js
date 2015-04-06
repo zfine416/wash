@@ -1,6 +1,7 @@
 var SignIn = Backbone.View.extend({
 	events: {
-		"click .login": "toggleForm"
+		"click .right": "toggleForm",
+		"click .cities": "ajaxcity"
 	}, 
 	initialize: function(){
 		$(this.$el.find(".loginform")).hide();
@@ -9,6 +10,11 @@ var SignIn = Backbone.View.extend({
 		$(".register").fadeToggle();
 		$(".notice").hide();
 		$(".loginform").slideToggle();
+	},
+	ajaxcity: function(){
+		debugger;
+		window.city = this.val();
 	}
+
 })
 

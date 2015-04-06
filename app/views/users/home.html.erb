@@ -2,9 +2,9 @@
 
 <body class="home">
 	<nav class="main-nav" id="main-nav">
-		<a href="users/miami">Miami</a>
-		<a href="users/la">Los Angeles</a>
-		<a href="ny">New York</a>
+		<a class="cities" value="miami" href="users/main">Miami</a>
+		<a class="cities" value="la" href="users/la">Los Angeles</a>
+		<a class="cities" value="ny" href="users/ny">New York</a>
 		<a href="users/aboutus">About Us</a>
 	</nav>
 
@@ -18,13 +18,12 @@
 				☰
 			</a>
 
-			<h1 class="wash">WASH</h1>
+			<h1 class="wash">WASH<div class="right">Sign In/Register</div></h1>
+			
 		</header>
 
 		<div class="content">
 			<h1>A Whole New <br> Car Washing Experience</h1>
-			<h3 class="login">Login to start</h3>
-			<h4 class="register"><a href="/users/new">Register</a></h4>
 			<%= form_for @user, as: :session, url: session_url, html: { class: "loginform"} do |f| %>
 			<div class="form-group">
 				<label for="email">Email address</label>

@@ -24,15 +24,39 @@ class UsersController < ApplicationController
 		# @employees = Employee.all
 		@my_time = Time.now
 	end
+	def la
+	end
 
-	# def open
-	# 	city = params[:city]
-	# 	@employees = Employee.all.where("city='#{city}'")
-	# 	respond_to do |format|
-	# 		format.html { render text: "Please go to emplyees.json" }
-	# 		format.json { render json: @employees.to_json }
-	# 	end
-	# end
+	def ny
+
+	end
+	def cities
+		binding.pry
+	end
+
+	def miami
+		@employees = Employee.all.where("city='Miami'")
+		respond_to do |format|
+			format.html { render text: "Please go to emplyees.json" }
+			format.json { render json: @employees.to_json }
+		end
+	end
+
+	def newyork
+		@employees = Employee.all.where("city='New York'")
+		respond_to do |format|
+			format.html { render text: "Please go to emplyees.json" }
+			format.json { render json: @employees.to_json }
+		end
+	end
+
+	def losangeles
+		@employees = Employee.all.where("city='Los Angeles'")
+		respond_to do |format|
+			format.html { render text: "Please go to emplyees.json" }
+			format.json { render json: @employees.to_json }
+		end
+	end
 
 	def employees
 		@employees = Employee.all
@@ -52,7 +76,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new( user_params )
 		if @user.save
-			redirect_to new_session_url
+			redirect_to users_main_url
 		else
 			# binding.pry
 			render :new, notice: "#{@user.email} is not a valid email"

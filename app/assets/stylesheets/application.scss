@@ -22,12 +22,12 @@
  	border: 0;
  	box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
- }
+}
 
- html, body { min-height: 100%; }
- a { text-decoration: none; }
+html, body { min-height: 100%; }
+a { text-decoration: none; }
 
- .main-header {
+.main-header {
   background: rgba(0,0,0,.2);
   padding: 5px;
   text-align: center;
@@ -95,9 +95,20 @@
   }
 }
 
+.right{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: .5em;
+  &:hover{
+    transition: color 3s;
+    color:#FF9953;
+    cursor: pointer;
+  }
+}
 .content {
   position: absolute;
-  top:50%;
+  top:58%;
   left: 21%;
   color: white;
   font-size: 2em;
@@ -266,7 +277,7 @@ body,
 }
 
 #map-canvas{
-  height: 500px;
+  height: 580px;
   width: 100%;
   border: 2px solid black;
 }

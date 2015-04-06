@@ -6,6 +6,8 @@ class CreateEmployees < ActiveRecord::Migration
 			t.string :first_name, null: false
 			t.string :last_name, null: false
 			t.string :phone_number, null: false 
+			t.string :latitude
+			t.string :longitude
 			t.string :password_digest, null: false
 			t.string :session_token
 			t.timestamps null: false

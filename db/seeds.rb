@@ -16,7 +16,17 @@ debbie = Employee.create(email:"debbie@gmail.com", city:"Los Angeles", first_nam
 john = Employee.create(email:"johnjones@gmail.com", city:"Miami", first_name: "Jonathan", last_name: "Jones", phone_number: "3333333333", password_digest:"fe11v25vgrcsv2", session_token:"abcqwe303fqew")
 sarah = Employee.create(email:"sarahz@gmail.com", city:"New York", first_name: "Sarah", last_name:"Zackson", phone_number: "0987654321", password_digest:"nhl245vgrcsv2", session_token:"pol4231fq2w")
 
+cities = ["Miami","New York","Los Angeles"]
+miamilat = 25.37
+miamilong = -80.5
+lalat = 33.85
+lalong = -118.5
+nylat = 40.5
+nylong =  -74
+lats = [miamilat, nylat, lalat]
+longs = [miamilong, nylong, lalong]
 
-100.times do 
-	Employee.create(email:Faker::Internet.email, city:Faker::Address.city, first_name:Faker::Name.first_name, last_name:Faker::Name.last_name, phone_number:Faker::PhoneNumber.cell_phone, password_digest: Faker::Internet.password, session_token: Faker::Internet.password(10, 20) )
+1000.times do 
+	random = Random.rand(3)
+	Employee.create(email:Faker::Internet.email, city:cities[random], first_name:Faker::Name.first_name, last_name:Faker::Name.last_name, phone_number:Faker::PhoneNumber.cell_phone, password_digest: Faker::Internet.password, session_token: Faker::Internet.password(10, 20), latitude: (lats[random]+(rand/2)).to_s, longitude: (longs[random]+(rand/2)).to_s )
 end

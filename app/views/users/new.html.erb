@@ -3,17 +3,23 @@
     <h1>Sign up</h1>
 
     <%= form_for @user do |f| %>
+    Email:
     <%= f.text_field :email, placeholder: "email" %>
     <br/>
+    Password:
     <%= f.password_field :password, placeholder: "password" %>
     <br/>
+    Confirm Password:
     <%= f.password_field :password_confirmation, placeholder: "confirm password"%>
     <br/>
+    First Name:
     <%= f.text_field :first_name, placeholder: "First Name" %>
     <br/>
+    Last Name:
     <%= f.text_field :last_name, placeholder: "Last Name" %>
     <br/>
-    <%= f.telephone_field(:phone_number) %>
+    Phone Number:
+    <%= f.telephone_field(:phone_number)%>
     <br/>
     <!-- <p><%= notice %></p> -->
     <center><%= f.submit "Sign up" , :class => "buttonnew"%></center>
