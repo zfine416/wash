@@ -1,9 +1,11 @@
-// geocoder = new google.maps.Geocoder();
 var CityFormView = Backbone.View.extend({
 	events: {
 		"submit .main": "miami",
 		"submit .la": "losangeles",
 		"submit .ny": "newyork"
+	},
+	initialize: function(){
+		navigator.geolocation.getCurrentPosition(initialize);
 	},
 	miami: function(event){
 		event.preventDefault();
@@ -92,21 +94,19 @@ function renderMarkers(data){
 		});
 	})
 }
+
 function initialize(location){
 	geocoder = new google.maps.Geocoder();
 	var latlng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+	
 	var mapOptions = {
 		zoom: 15,
 		center: latlng
-	}
-	
+	};
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-	// var marker = new google.maps.Marker({
-	// 	position: latlng,
-	// 	map: map,
-	// 	title:"hello"
-	// });
+
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 
 function codeAddress(address) {
 	geocoder.geocode( { 'address': address}, function(results, status) {
@@ -123,9 +123,7 @@ function codeAddress(address) {
 		}
 	});
 }
-$(document).ready(function(){
-	navigator.geolocation.getCurrentPosition(initialize);
-})
+
 
 
 

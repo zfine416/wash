@@ -178,6 +178,10 @@ h1:hover{
     cursor: pointer;
   }
 }
+
+.loginform{
+  height: 100px;
+}
 .register{
   a{
     color: white;
@@ -246,11 +250,12 @@ body,
   height: 10%;
   background: hotpink;
   color: navy;
+  position: relative;;
   form{
     font-size: 1.5em;
     position: absolute;
-    left: 27%;
-    top: 2%;
+    left: 33.33%;
+    top: 25%;
   }
 }
 
@@ -277,7 +282,10 @@ body,
 }
 
 #map-canvas{
-  height: 580px;
+  position: absolute;
+  top: 60px;
+  bottom:0;
+ /* height: 580px;*/
   width: 100%;
   border: 2px solid black;
 }

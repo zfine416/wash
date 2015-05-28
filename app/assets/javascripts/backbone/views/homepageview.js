@@ -7,8 +7,8 @@ var SignIn = Backbone.View.extend({
 		$(this.$el.find(".loginform")).hide();
 	},
 	toggleForm: function(){
-		$(".register").fadeToggle();
-		$(".notice").hide();
+		// $(".register").fadeToggle();
+		// $(".notice").hide();
 		$(".loginform").slideToggle();
 	},
 	ajaxcity: function(){
